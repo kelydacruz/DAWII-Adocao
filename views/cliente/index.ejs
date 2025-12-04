@@ -1,5 +1,4 @@
-<!-- Usa o cabeçalho desta pasta (cliente) -->
-<%- include('cabecalho.ejs') %>
+<%- include('./cabecalho.ejs') %>
 
 <!-- Hero Section -->
 <div class="container-fluid p-0 mb-5">
@@ -84,5 +83,42 @@
     </div>
 </div>
 
-<!-- Usa o rodapé geral (volta uma pasta) -->
+<!-- SEÇÃO: Sobre Nós (Mantida, pois é apenas informativo) -->
+<div class="container py-5 border-top" id="sobre">
+    <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0">
+            <img src="https://images.unsplash.com/photo-1544568100-847a948585b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" class="img-fluid rounded-4 shadow-lg" alt="Sobre Nós">
+        </div>
+        <div class="col-md-6 ps-md-5">
+            <h5 class="text-primary fw-bold text-uppercase ls-1">Quem Somos</h5>
+            <h2 class="display-5 fw-bold mb-4">Conectando Corações e Patas</h2>
+            <p class="text-muted fs-5 mb-4">No Amigo Fiel, acreditamos que todo animal merece um lar amoroso. Desde 2024, trabalhamos incansavelmente para resgatar, cuidar e encontrar famílias para animais em situação de rua.</p>
+            <div class="row g-4 mt-2">
+                <div class="col-6">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-primary bg-opacity-10 p-3 rounded-circle me-3">
+                            <i class="fas fa-home text-primary fa-2x"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-0">200+</h5>
+                            <small class="text-muted">Adoções</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-success bg-opacity-10 p-3 rounded-circle me-3">
+                            <i class="fas fa-users text-success fa-2x"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-0">50+</h5>
+                            <small class="text-muted">Voluntários</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <%- include('../rodape.ejs') %>
