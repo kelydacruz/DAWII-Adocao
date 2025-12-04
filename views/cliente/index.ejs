@@ -1,0 +1,88 @@
+<!-- Usa o cabeçalho desta pasta (cliente) -->
+<%- include('cabecalho.ejs') %>
+
+<!-- Hero Section -->
+<div class="container-fluid p-0 mb-5">
+    <div class="hero-section text-center text-white" style="border-radius: 0 0 50% 50% / 4%; margin-top: 0; padding-bottom: 120px; background: linear-gradient(rgba(37, 117, 252, 0.8), rgba(106, 17, 203, 0.8)), url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); background-size: cover; background-position: center;">
+        <div class="container pt-5">
+            <h1 class="hero-title mb-3 display-3 fw-bold">Encontre seu Melhor Amigo</h1>
+            <p class="hero-subtitle mb-4 fs-4 text-light">Adotar é um ato de amor. Navegue pelos nossos animais e dê um novo lar para quem precisa.</p>
+            <a href="#animais-lista" class="btn btn-light btn-lg px-5 py-3 rounded-pill fw-bold text-primary shadow-lg mt-3">Ver Animais Disponíveis</a>
+        </div>
+    </div>
+</div>
+
+<div class="container" id="animais-lista" style="margin-top: -80px; position: relative; z-index: 2;">
+    
+    <!-- Filtro -->
+    <div class="card border-0 shadow-lg rounded-4 mb-5 p-4">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h3 class="fw-bold text-primary mb-0"><i class="fas fa-paw me-2"></i>Nossos Amigos</h3>
+                <small class="text-muted">Mostrando todos os animais para adoção</small>
+            </div>
+            <div class="col-md-6">
+                <form action="/cliente" method="GET" class="d-flex mt-3 mt-md-0">
+                    <input class="form-control me-2 rounded-pill border-2" type="search" placeholder="Busque por raça, nome..." aria-label="Search">
+                    <button class="btn btn-primary rounded-pill px-4" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid de Cards -->
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5">
+        <% if (Animais.length === 0) { %>
+            <div class="col-12 text-center py-5">
+                <div class="alert alert-info rounded-pill d-inline-block px-5 py-3 shadow-sm">
+                    <i class="fas fa-info-circle me-2 fs-5"></i> Nenhum animal encontrado no momento.
+                </div>
+            </div>
+        <% } %>
+
+        <% for (const animal of Animais) { %>
+            <div class="col">
+                <div class="card card-animal h-100 shadow-sm border-0 rounded-4">
+                    <div class="position-relative overflow-hidden rounded-top-4">
+                        <% if (animal.foto) { %>
+                            <img src="<%= animal.foto %>" class="card-img-top zoom-effect" alt="<%= animal.nome %>" style="height: 280px; object-fit: cover;">
+                        <% } else { %>
+                            <img src="https://via.placeholder.com/300x280?text=Sem+Foto" class="card-img-top" alt="Sem foto">
+                        <% } %>
+                        <span class="badge bg-success position-absolute top-0 end-0 m-3 py-2 px-3 rounded-pill shadow-sm">
+                            <i class="fas fa-check-circle me-1"></i> Disponível
+                        </span>
+                    </div>
+                    
+                    <div class="card-body p-4 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h4 class="card-title text-dark fw-bold mb-0"><%= animal.nome %></h4>
+                        </div>
+                        
+                        <p class="text-muted small mb-3">
+                            <i class="fas fa-map-marker-alt me-1 text-danger"></i> <%= animal.abrigo ? animal.abrigo.nome : 'Abrigo não informado' %>
+                        </p>
+                        
+                        <div class="d-flex flex-wrap gap-2 mb-3">
+                            <span class="badge bg-light text-dark border px-3 py-2 rounded-pill"><%= animal.raca %></span>
+                            <span class="badge bg-light text-dark border px-3 py-2 rounded-pill"><%= animal.idade %> anos</span>
+                        </div>
+
+                        <p class="card-text text-secondary flex-grow-1" style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;">
+                            <%= animal.descricao || 'Sem descrição disponível.' %>
+                        </p>
+
+                        <div class="mt-4 pt-3 border-top">
+                            <a href="#" class="btn btn-primary w-100 rounded-pill py-2 fw-bold shadow-sm hover-elevate">
+                                <i class="fas fa-heart me-2"></i>Quero Adotar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>
+
+<!-- Usa o rodapé geral (volta uma pasta) -->
+<%- include('../rodape.ejs') %>

@@ -1,128 +1,78 @@
-/* Estilos Gerais */
+/* Fonte Geral */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .footer{
-    padding: 20px;
-  }
-  
-  .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 100%;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  /* Estilos do Menu de Navegação */
-  .menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: line;
-    gap: 10px;
-  }
-  
-  .menu ul li {
-    text-align: center;
-  }
-  
-  /* Estilos do Formulário */
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: #555;
-  }
-  
-  .form-group input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  /* Estilos dos Botões */
-  .btn {
-    display: inline-block;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  
-  .btn {
-    background-color: #1c57af;
-    color: #fff;
-  }
-  
-  .btn.edit {
-    background-color: #ffc107;
-    color: #000;
-  }
-  
-  .btn.add {
-    color: #fff;
-    background-color:#1c0df3
-  }
-  
-  .btn.delete {
-    background-color: #dc3545;
-    color: #fff;
-  }
-  
-  .btn.cancelar {
-    background-color: #6c757d;
-    color: #fff;
-  }
-  
-  .btn:hover {
-    opacity: 0.9;
-  }
-  
-  /* Estilos da Tabela */
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  table th, table td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  table th {
+    font-family: 'Nunito', sans-serif;
     background-color: #f8f9fa;
-  }
-  
-  table tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .search
-  {
-    text-align: right;
-  }
+}
+
+/* Navbar Customizada */
+.navbar {
+    /* Navbar padrão (pode ser sobrescrita) */
+}
+
+/* Cards de Animais */
+.card-animal {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.card-animal:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.zoom-effect {
+    transition: transform 0.5s ease;
+}
+
+.card-animal:hover .zoom-effect {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Botões */
+.btn-primary {
+    background-color: #2575fc;
+    border-color: #2575fc;
+    border-radius: 50px;
+    padding: 10px 25px;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #1a5bbf;
+}
+
+/* Admin e Tabelas */
+.table {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.form-visual {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* Hero Section (Cliente) */
+.hero-section {
+    position: relative;
+    color: white;
+}
