@@ -1,0 +1,30 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>🏆 TIMES</h1>
+    <div>
+        <form action="
+        " method="post">
+        <input type="text" name="filtro"
+         id="" placeholder="Pesquisar...">
+         <button type="submit">Pesquisar</button>
+    </form>
+    </div>
+        <a href="/time/add">+ Novo Time</a>
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Cidade</td>
+            <td>Ações</td>
+        </tr>
+      
+      
+        <%for (const {id, nome, cidade} of Times) {%>
+        <tr>
+            <td><%=nome%></td>
+            <td><%=cidade%></td>
+
+            <td><a href="/time/edt/<%=id%>">Editar</a>
+            <a href="/time/del/<%=id%>">Excluir</a></td>
+        </tr>
+        <%}%>
+    </table>
+ <%-include('../rodape.ejs')%> 

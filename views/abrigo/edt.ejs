@@ -1,0 +1,30 @@
+<%-include('../cabecalho.ejs')%>
+<h1>EDITAR ABRIGO</h1>
+<div>
+<a href="/abrigo/lst">Listar</a>
+</div>
+<div>
+    <form  method="post">
+       
+        <input type="hidden" name="id" 
+        value="<%=Abrigo.id%>"><br>
+
+        <label>Nome:</label>
+        <input type="text" name="nome" 
+        value="<%=Abrigo.nome%>"><br>
+         <label>Endereço:</label>
+        <input type="text" name="endereco" 
+        value="<%=Abrigo.endereco%>"><br>
+        <label>Telefone:</label>
+        <input type="text" name="telefone"
+        value="<%=Abrigo.telefone%>"><br>
+        <label>Email:</label>
+        <input type="text" name="email"
+        value="<%=Abrigo.email%>"><br>
+
+        <button type="submit">Salvar</button>
+        
+    </form>
+</div>
+
+<%-include('../rodape.ejs')%>

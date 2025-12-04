@@ -1,0 +1,50 @@
+<%-include('../cabecalho.ejs')%>
+<h1>EDITAR ANIMAL
+</h1>
+<div>
+<a href="/animal/lst">Listar</a>
+</div>
+<div>
+     <form method="post" class="form-visual" enctype="multipart/form-data">
+       
+        <input type="hidden" name="id"
+        value="<%=Animal.id%>"><br>
+
+         <label>Foto:</label>
+        <img src="<%=Animal.foto%>" width="150" height="150">
+        <input type="file" name="foto" accept="image/png"><br>
+         <label>Espécie:</label>
+        <input type="text" name="especie" 
+        value="<%=Animal.especie%>"><br>
+        <label>Raca:</label>
+        <input type="text" name="raca"
+        value="<%=Animal.raca%>"><br>
+        <label>Idade:</label>
+        <input type="number" name="idade"
+        value="<%=Animal.idade%>"><br>
+        <label>Genero:</label>
+        <input type="text" name="genero"
+        value="<%=Animal.genero%>"><br>
+        <label>Descrição:</label>
+        <input type="text" name="descricao"
+        value="<%=Animal.descricao%>"><br>
+         
+        <label>Abrigo:</label>
+        <select name="abrigo" id="abrigo">
+            <option value="">Selecione</option>
+            <% Abrigo.forEach(function(abrigo){ %>
+                <option value="<%= abrigo.id %>"
+                    <%= (Animal.abrigo && abrigo.id.toString() === Animal.abrigo.toString()) ? 'selected' : " " %>>
+                    <%= abrigo.nome %>
+                </option>
+            <% }) %>
+        </select><br>
+            
+
+
+        </select><br>
+        
+         <button type="submit">Salvar</button>
+    </form>
+</div>
+<%-include('../rodape.ejs')%>

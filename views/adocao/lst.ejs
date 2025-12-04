@@ -1,0 +1,31 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>👥 Adocao</h1>
+    <div>
+        <form action="
+        " method="post">
+        <input type="text" name="filtro"
+         id="" placeholder="Pesquisar...">
+         <button type="submit">Pesquisar</button>
+    </form>
+    </div>
+        <a href="/adocao/add" class="add">+ Nova Adocao</a>
+    <table>
+        <tr>
+            <td>Adotante</td>
+            <td>Animal</td>
+            <td>Data</td>
+            <td>Ações</td>
+        </tr>
+      
+        <%for (const {id, Adotante, Animal, Data} of Adocoes) {%>
+        <tr>
+            <td><%=Adotante%></td>
+            <td><%=Animal%></td>
+            <td><%=Data%></td>
+    
+            <td><a href="/adocao/edt/<%=id%>">Editar</a>
+            <a href="/adocao/del/<%=id%>">Excluir</a></td>
+        </tr>
+        <%}%>
+    </table>
+ <%-include('../rodape.ejs')%>

@@ -1,0 +1,36 @@
+<%-include('../cabecalho.ejs')%>
+<h1>ADICIONAR ANIMAL</h1>
+<div>
+<a href="/animal/lst">Listar</a>
+</div>
+<div>
+    <form  method="post" enctype="multipart/form-data">
+        <label for="foto">Foto:</label>
+        <input type="file" id="foto" name="foto" required><br>
+        <label>Nome:</label>
+        <input type="text" name="nome"><br>
+        <label>Espécie:</label>
+        <input type="text" name="especie"><br>
+        <label>Raca:</label>
+        <input type="text" name="raca"><br>
+        <label>Idade:</label>
+        <input type="number" name="idade"><br>
+         <label>Genero:</label>
+        <input type="text" name="genero"><br>
+        <label>Descrição:</label>
+        <input type="text" name="descricao"><br>
+
+        <label>Abrigo:</label>
+            <select name="abrigo" id="abrigo">
+                <option value="">Selecione</option>
+                <% Abrigo.forEach(function(abrigo){ %>
+                    <option value='<%= abrigo.id %>'><%= abrigo.nome %></option>
+                <% }) %>
+        </select><br>
+
+        <button type="submit">Salvar</button>
+        
+    </form>
+</div>
+
+<%-include('../rodape.ejs')%>

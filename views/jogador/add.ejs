@@ -1,0 +1,40 @@
+<%-include('../cabecalho.ejs')%>
+<h1>ADICIONAR JOGADORES</h1>
+<div>
+<a href="/jogador/lst">Listar</a>
+</div>
+<div>
+    <form  method="post">
+        <label>Nome:</label>
+        <input type="text" name="nome"><br>
+
+        <label>Time:</label>
+            <select name="time">
+                <option value="">Selecione</option>
+                <option value="Sesi São Paulo">Sesi São Paulo</option>
+                <option value="Minas Tênis Clube">Minas Tênis Clube</option>
+                <option value="Flamengo">Flamengo</option>
+            </select>
+            <br>
+
+         <label>Posição:</label>
+            <select name="posicao">
+                <option value="">Selecione</option>
+                <option value="Ponteiro">Ponteiro</option>
+                <option value="Levantador">Levantador</option>
+                <option value="Central">Central</option>
+                <option value="Oposto">Oposto</option>
+                <option value="Líbero">Líbero</option>
+            </select><br>
+
+        <label>Idade:</label>
+        <input type="number" name="idade"><br>
+        <label>Altura (cm):</label>
+        <input type="number" name="altura"><br>
+       
+        <button type="submit">Cadastrar</button>
+        
+    </form>
+</div>
+
+<%-include('../rodape.ejs')%>

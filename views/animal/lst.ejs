@@ -1,0 +1,44 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>👥 ANIMAIS</h1>
+    <div>
+        <form action="
+        " method="post">
+        <input type="text" name="filtro"
+         id="" placeholder="digite o nome">
+         <button type="submit">Pesquisar</button>
+    </form>
+    </div>
+    <a href="/animal/add">Adicionar animal</a>
+    <table class="table">
+        <thead>
+            <tr>
+            <td>Foto</td>
+            <td>Nome</td>
+            <td>Espécie</td>
+            <td>Raça</td>
+            <td>Idade</td>
+            <td>Gênero</td>
+            <td>Descrição</td>
+            <td>Abrigo</td>
+            <td>Ações</td>
+            </tr>
+        </thead>
+        <tbody>
+              <%for (const {id, foto, nome, especie, raca, idade, genero, descricao, abrigo} of Animais) {%>
+            <tr>
+                <td><img src="<%=foto%>" width="150" height="150"></td>
+                <td><%=nome%></td>
+                <td><%=especie%></td>
+                <td><%=raca%></td>
+                <td><%=idade%></td>
+                <td><%=genero%></td>
+                <td><%=descricao%></td>
+                <td><%=abrigo.nome%></td>
+
+                <td><a href="/animal/edt/<%=id%>">Editar</a>
+                <a href="/animal/del/<%=id%>">Excluir</a></td>
+            </tr>
+            <%}%>
+        </tbody>
+    </table>
+ <%-include('../rodape.ejs')%>

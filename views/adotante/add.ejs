@@ -1,0 +1,28 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Adicionar Adotante</h1>
+<div style="margin-bottom: 24px">
+    <a href="/Adotante/lst" class="btn">Listar</a>
+</div>
+<div>
+    <form method="post">
+       <label>Nome:</label>
+        <input type="text" name="nome"><br>
+        <label>CPF:</label>
+        <input type="text" name="cpf"><br>
+        <label>Data de Nascimento:</label>
+        <input type="date" name="dataNascimento"><br>
+        <label>Telefone:</label>
+        <input type="text" name="telefone"><br>
+        <label>E-mail:</label>
+        <input type="text" name="email"><br>
+        <label>Endereço:</label>
+        <input type="text" name="endereco"><br>
+         <label>Senha:</label>
+        <input type="password" name="senha"><br>
+        <label>Data de cadastro:</label>
+        <input type="date" name="dataCadastro"><br>
+
+         <button type="submit">Salvar</button>
+    </form>
+</div>
+<%-include('../rodape.ejs')%>
