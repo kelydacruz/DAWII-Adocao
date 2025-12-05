@@ -1,17 +1,13 @@
 <%-include('../cabecalho.ejs')%>
 <h1>EDITAR ADOCAO</h1>
 <div>
-<a href="/adocao/lst">Listar</a>
+<a href="/adocao/lst">LISTAR</a>
 </div>
 <div>
     <form  method="post">
        
         <input type="hidden" name="id" 
         value="<%=Adocao.id%>"><br>
-
-        <label>Data:</label>
-        <input type="date" name="data"
-            value="<%=Adocao.data%>"><br>
 
         <label>Adotante:</label>
         <select name="adotante" id="adotante">
@@ -27,7 +23,7 @@
          <label>Animal:</label>
         <select name="animal" id="animal">
             <option value="">Selecione</option>
-            <% Animals.forEach(function(animal){ %>
+            <% Animais.forEach(function(animal){ %>
                 <option value="<%= animal.id %>"
                     <%= (Adocao.animal && animal.id.toString() === Adocao.animal.toString()) ? 'selected' : " " %>>
                     <%= animal.nome %>
@@ -35,6 +31,11 @@
             <% }) %>
         </select><br>
         
+      <label>Data da Adoção:</label>
+        <input type="date" name="dataAdocao"
+        value="<%=Adotante.dataAdocao%>"><br>
+
+
        <button type="submit">Salvar</button>
     </form>
 </div>

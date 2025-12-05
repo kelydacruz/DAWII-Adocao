@@ -49,8 +49,8 @@ export default class AdocaoController {
             const resultado = await Adocao.find({
                 dataAdocao: { $regex: filtro, $options: "i" }
             })
-            .populate('adotante')
-            .populate('animal');
+            .populate('adotante', 'nome')
+            .populate('animal', 'nome');
 
             res.render(caminhoBase + 'lst', { Adocoes: resultado });
         }

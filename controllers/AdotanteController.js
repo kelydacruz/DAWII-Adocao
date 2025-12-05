@@ -18,7 +18,6 @@ export default class AdotanteController{
                 telefone: req.body.telefone,
                 email: req.body.email,
                 endereco: req.body.endereco,
-                senha: req.body.senha,
                 dataCadastro: req.body.dataCadastro
             });
             res.redirect('/'+caminhoBase + 'add');

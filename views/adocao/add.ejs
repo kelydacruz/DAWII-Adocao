@@ -1,20 +1,13 @@
 <%-include('../cabecalho.ejs')%>
 <h1>ADICIONAR ADOCAO</h1>
 <div>
-<a href="/adocao/lst">Listar</a>
+<a href="/adocao/lst">LISTAR</a>
+
 </div>
 <div>
     <form  method="post">
 
-        <label>Animal:</label>
-        <select name="time" id="time">
-            <option value="">Selecione</option>
-            <% Animais.forEach(function(animal){ %>
-                <option value='<%= animal.id %>'><%= animal.nome %></option>
-            <% }) %>
-        </select><br>
-        
-        <label>Adotante:</label>
+         <label>Adotante:</label>
         <select name="adotante" id="adotante">
             <option value="">Selecione</option>
             <% Adotantes.forEach(function(adotante){ %>
@@ -22,8 +15,16 @@
             <% }) %>
         </select><br>
 
-        <label>Data:</label>
-        <input type="date" name="data"><br>
+        <label>Animal:</label>
+        <select name="animal" id="animal">
+            <option value="">Selecione</option>
+            <% Animais.forEach(function(animal){ %>
+                <option value='<%= animal.id %>'><%= animal.nome %></option>
+            <% }) %>
+        </select><br>
+        
+        <label>Data da adoção:</label>
+        <input type="date" name="dataAdocao"><br>
 
         <button type="submit">Salvar</button>
         

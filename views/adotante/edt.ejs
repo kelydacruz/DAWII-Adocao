@@ -1,7 +1,7 @@
 <%-include('../cabecalho.ejs')%>
 <h1>EDITAR ADOTANTE</h1>
 <div>
-<a href="/adotante/lst">Listar</a>
+<a href="/adotante/lst">LISTAR</a>
 </div>
 <div>
     <form  method="post">
@@ -27,9 +27,6 @@
         <label>Endereço:</label>
         <input type="text" name="endereco"
         value="<%=Adotante.endereco%>"><br>
-        <label>Senha:</label>
-        <input type="password" name="senha"
-        value="<%=Adotante.senha%>"><br>
         <label>Data de cadastro:</label>
         <input type="date" name="dataCadastro"
         value="<%=Adotante.dataCadastro%>"><br>

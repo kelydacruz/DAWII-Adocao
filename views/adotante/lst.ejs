@@ -1,5 +1,5 @@
 <%-include('../cabecalho.ejs')%>
-    <h1>👥 Adotante</h1>
+    <h1>ADOTANTES</h1>
     <div>
         <form action="
         " method="post">
@@ -8,7 +8,7 @@
          <button type="submit">Pesquisar</button>
     </form>
     </div>
-        <a href="/adotante/add" class="add">+ Novo Adotante</a>
+        <a href="/adotante/add" class="add">+ NOVO ADOTANTE</a>
     <table>
         <tr>
             <td>Nome</td>
@@ -17,22 +17,20 @@
             <td>Telefone</td>
             <td>Email</td>
             <td>Endereço</td>
-            <td>senha</td>
             <td>Data de Cadastro</td>
             <td>Ações</td>
         </tr>
       
       
-        <%for (const {id, nome, cpf, dataNascimento, telefone, email, endereco, senha, dataCadastro} of Adotantes) {%>
+        <%for (const {id, nome, cpf, dataNascimento, telefone, email, endereco, dataCadastro} of Adotantes) {%>
         <tr>
             <td><%=nome%></td>
             <td><%=cpf%></td>
-            <td><%=dataNascimento%></td>
+            <td><%=new Date(dataNascimento).toLocaleDateString('pt-BR')%></td>
             <td><%=telefone%></td>
             <td><%=email%></td>
             <td><%=endereco%></td>
-            <td><%=senha%></td>
-            <td><%=dataCadastro%></td>
+            <td><%=new Date(dataCadastro).toLocaleDateString('pt-BR')%></td>
 
             <td><a href="/adotante/edt/<%=id%>">Editar</a>
             <a href="/adotante/del/<%=id%>">Excluir</a></td>

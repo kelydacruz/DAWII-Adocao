@@ -1,5 +1,5 @@
 <%-include('../cabecalho.ejs')%>
-    <h1>👥 Adocao</h1>
+    <h1>ADOÇÕES</h1>
     <div>
         <form action="
         " method="post">
@@ -8,20 +8,21 @@
          <button type="submit">Pesquisar</button>
     </form>
     </div>
-        <a href="/adocao/add" class="add">+ Nova Adocao</a>
+        <a href="/adocao/add" class="add">+ NOVA ADOÇÃO</a>
     <table>
         <tr>
             <td>Adotante</td>
             <td>Animal</td>
-            <td>Data</td>
+            <td>Data da Adoção</td>
             <td>Ações</td>
         </tr>
       
-        <%for (const {id, Adotante, Animal, Data} of Adocoes) {%>
+        <%for (const {id, adotante, animal, dataAdocao} of Adocoes) {%>
         <tr>
-            <td><%=Adotante%></td>
-            <td><%=Animal%></td>
-            <td><%=Data%></td>
+            <td><%=adotante.nome%></td>
+            <td><%=animal.nome%></td>
+             <td><%=new Date(dataAdocao).toLocaleDateString('pt-BR')%></td>
+
     
             <td><a href="/adocao/edt/<%=id%>">Editar</a>
             <a href="/adocao/del/<%=id%>">Excluir</a></td>

@@ -14,7 +14,7 @@ const Adocao = new conexao.Schema({
 
     dataAdocao: {
         type: Date,
-        default: Date.now
+        required: true
     },
 });
 

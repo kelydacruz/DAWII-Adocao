@@ -57,7 +57,7 @@ body {
 }
 
 .form-visual {
-    background: white;
+    background: rgb(214, 209, 209);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
